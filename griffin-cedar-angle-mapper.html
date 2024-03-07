@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>GRIFFIN-ARIES Array angles</title>
+
+        <link rel="stylesheet" href="griffin-cedar-angle-mapper.css">
+    </head>
+
+    <body>
+        <div id='header'><b>GRIFFIN and CEDAR angles for gamma-ICE (Internal Conversion Electron) angular correlations</b></div>
+	  <br>
+<div>Go to: <a href="https://adamgarnsworthy.github.io/griffin-angle-mapper/griffin-angle-mapper.html">GRIFFIN Array angles for gamma-gamma angular correlations</a></div>
+<div>Go to: <a href="https://adamgarnsworthy.github.io/griffin-aries-angle-mapper/griffin-aries-angle-mapper.html">GRIFFIN and ARIES angles for beta-gamma angular correlations</a></div>	
+<br>
+
+	<div id=ContainerDivMap>
+	  
+	<table align="center">
+	  <tr><td align="left">
+	    <label for="conceptSelector" class="right inline"><b>CEDAR Concept layout:</b></label>
+	    <select id="conceptSelector" onchange="PlotTables()">
+	      <option value="single-ring">Single theta ring</option>
+	      <option value="two-rings">Two theta rings</option>
+	    </select>
+	  </td></tr>
+	  <tr><td align="left">
+	    <label for="distanceSelector" class="right inline"><b>Distance of HPGe:</b></label>
+	    <select id="distanceSelector" onchange="PlotTables()">
+	      <option value="110">110 mm</option>
+	      <option value="145">145 mm</option>
+	    </select>
+	  </td></tr>
+	<tr><td align="left">
+	    <label for="crystalSelector" class="right inline"><b>GRIFFIN HPGe crystal:</b></label>
+	    <select id="crystalSelector" onchange="PlotTables()">
+	    </select>
+	  </td></tr>
+	<tr><td align="left">
+	    <label for="siliSelector" class="right inline"><b>CEDAR crystal:</b></label>
+	    <select id="siliSelector" onchange="PlotTables()">
+	    </select>
+	  </td></tr>
+	<tr><td align="left">
+	    <label for="tableSelector" class="right inline"><b>Table to Display:</b></label>
+	    <select id="tableSelector" onchange="PlotTables()">
+	      <option value="crystals">HPGe Crystal Angles</option>
+	      <option value="sili">CEDAR crystal Angles</option>
+	      <option value="combinationsHPGeCrystal">HPGe-Si(Li) Combinations</option>
+	      <option value="combinationsCEDARCrystal">Si(Li)-HPGe Combinations</option>
+	      <option value="angles">Angular Bins</option>
+	    </select>
+	  </td></tr>
+	<tr><td align="left" id="AngularBinCompositionSelectionContainer">
+	  </td></tr>
+	</table>
+
+	GRIFFIN
+	  <table id="MapTable" class="crystalMap" align="center"></table>
+	    CEDAR
+	  <table id="MapSiliTable" class="siliMap" align="center"></table>
+
+	<p id="instructions" align="left">
+	<b>Guidance:</b><br>
+	<ul align="left">
+	<li>Select a HPGe distance and a Table to display using the drop-down
+	menus above.</li>
+	<li>Select a GRIFFIN HPGe crystal in the drop-down menu above that will be
+	referenced in the HPGe-Si(Li) Combinations table.</li>
+	<li>Select a CEDAR Si(Li) crystal in the drop-down menu above that will be
+	referenced in the Si(Li)-HPGe Combinations table.</li>
+	<li>The tables on the right are scrollable.</li>
+	<li>Hover your mouse over a row of the HPGe/Si(Li) Angles or HPGe-Si(Li)/Si(Li)-HPGe
+	<li>Combinations table to see the crystals/sili highlighted on the map.</li>
+        <li>Click on the maps above to exclude crystals/sili from the calculations.</li>
+	<li>Excluded crystals are not included in the number of pairs shown in
+	the Angular Bins.</li>
+	<li>Click them on the map again to include them once more.</li>
+        </ul>
+	</p>
+	</div>
+
+      <div id="ContainerDivTable">
+	<p id="TableTitle"></p>
+	<table id="MultiTable" align="center"></table>
+	</div>
+      </div>
+      
+      <div id='footer'></div>
+
+      <script src="griffin-cedar-angle-mapper.js" type="text/javascript"></script>
+      
+    </body>
+</html>
